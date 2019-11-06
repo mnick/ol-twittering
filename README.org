@@ -1,0 +1,16 @@
+#+TITLE:   ol-twittering
+#+DATE:    November 5, 2019
+#+STARTUP: inlineimages
+
+A simple org-mode extension to create, store, and follow links to tweets from
+twittering mode
+
+* Configuration
+#+BEGIN_SRC elisp
+(require 'ol-twittering)
+
+(add-to-list org-capture-templates
+             '("w" "Store tweet" entry
+               (file+headline "~/org/inbox.org" "Tasks")
+               "* TODO [[%:link][%:description]] :read:\n%:tweet"))
+#+END_SRC
